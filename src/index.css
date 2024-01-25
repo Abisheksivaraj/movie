@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .home{
+    @apply font-logo text-[white] bg-black h-[2rem] w-[5rem] p-1 text-center rounded-md text-[1rem] hover:bg-[#ff9637] cursor-pointer scale-[1.2] hover:scale-[1.3]  transition duration-[400ms];
+  }
+
+  .shows{
+    @apply font-logo text-[white] bg-black h-[2rem] w-[8rem] p-1 text-center rounded-md text-[1rem] hover:bg-[#ff9637] cursor-pointer scale-[1.2] hover:scale-[1.3]  transition duration-[400ms];
+  }
+
+  .animi{
+    @apply font-logo text-[white] bg-black h-[2rem] w-[10rem] p-1 text-center rounded-md text-[1rem] hover:bg-[#ff9637] cursor-pointer scale-[1.2] hover:scale-[1.3]  transition duration-[400ms];
+  }
+
+  .side{
+    @apply text-[1.5rem] hover:h-[1.5rem] w-[1.5rem] hover:bg-[#ff9637]  rounded-sm  cursor-pointer scale-[1.2] hover:scale-[1.3]  transition duration-[400ms];
+  }
+
+  .profile{
+    @apply  h-[2rem] w-[2rem] rounded-full  hover:bg-[#ff9637] text-center  cursor-pointer scale-[1.2] hover:scale-[1.3]  transition duration-[400ms];
+}
+}
+
+body{
+  background-color: rgb(50, 50, 50);
+}
+
+
+
+
+
