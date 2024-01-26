@@ -4,7 +4,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        logo:['Permanent Marker', 'cursive']
+        logo: ["Permanent Marker", "cursive"],
+        ayal: ["Monoton", "sans-serif"],
+        miller: ["Black Ops One", "system-ui"],
+        japan: ["Archivo Black", "sans - serif"],
+        leo: ["Playfair Display", "serif"],
+        joe: ["Dancing Script", "cursive"],
+        parking: ["Noto Sans", 'sans - serif'],
       },
     },
   },
