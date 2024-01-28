@@ -1,28 +1,18 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import ayalaan from "../assets/Slideer-images/ayalaan.jpg";
-import captainmiller from "../assets/Slideer-images/captainmiller.jpg";
-import joe from "../assets/Slideer-images/joee.jpg";
-import leo from "../assets/Slideer-images/leo.webp";
-import salar from "../assets/Slideer-images/salaar.jpg";
-import hinana from "../assets/Slideer-images/hi.png";
-import fastx from "../assets/Slideer-images/fast x.webp";
-import moneyheist from "../assets/Slideer-images/moneyheist.webp";
-import parking from "../assets/Slideer-images/parking.webp";
-import japan from "../assets/Slideer-images/japan.jpg";
+import ayalaan from "../../assets/Slideer-images/ayalaan.jpg";
+import captainmiller from "../../assets/Slideer-images/captainmiller.jpg";
+import joe from "../../assets/Slideer-images/joee.jpg";
+import leo from "../../assets/Slideer-images/leo.webp";
+import salar from "../../assets/Slideer-images/salaar.jpg";
+import hinana from "../../assets/Slideer-images/hi.png";
+import fastx from "../../assets/Slideer-images/fast x.webp";
+import moneyheist from "../../assets/Slideer-images/moneyheist.webp";
+import parking from "../../assets/Slideer-images/parking.webp";
+import japan from "../../assets/Slideer-images/japan.jpg";
 
-const images = [
-  ayalaan,
-  captainmiller,
-  leo,
-  joe,
-  parking,
-  hinana,
-  moneyheist,
-  fastx,
-  salar,
-];
+
 
 const Slider = () => {
   const responsive = {
@@ -44,7 +34,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="slider-container">
+    <div className="slider-container absolute top-[8rem] w-[70rem] left-[7rem]">
       <Carousel
         swipeable={true}
         draggable={false}

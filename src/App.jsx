@@ -4,6 +4,8 @@ import { AuthContext } from "./context/AuthContext";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
+import Language from "./Components/Side/Language";
+import Profile from "../src/Components/Side/Profile"
 import "./App.css";
 
 function App() {
@@ -31,7 +33,7 @@ function App() {
     //     <Route path="/register" element={<Register />} />
     //   </Routes>
     // </BrowserRouter>
-    <Home/>
+    <Profile/>
   );
 }
 
