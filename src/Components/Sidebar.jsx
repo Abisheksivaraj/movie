@@ -9,7 +9,7 @@ import Slider from "./slider";
 const Sidebar = () => {
   return (
     <div>
-      <div className="flex-1 flex h-[25rem]  mt-[5rem] w-12 rounded-md bg-black ml-5 p-3 relative">
+      <div className="flex-1 flex h-[25rem]  mt-[5rem] w-12 rounded-md bg-black  p-3 relative">
         <div className="mt-5 text-center">
           <ul className="flex flex-col gap-[3rem] text-[white]">
             <li>

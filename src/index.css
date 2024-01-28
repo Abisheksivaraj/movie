@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -35,6 +36,8 @@
 
 body{
   background-color: rgb(50, 50, 50);
+  margin: 0;
+  overflow-x: hidden;
 }
 
 

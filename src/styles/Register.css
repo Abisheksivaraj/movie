@@ -1,0 +1,151 @@
+.reg-content {
+  background-image: url(https://thedrum-media.imgix.net/thedrum-prod/s3/news/tmp/10557/netflixa.jpg?w=1280&ar=default&fit=crop&crop=faces,edges&auto=format);
+  width: 100vw;
+  height: 100vh;
+  background-size: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: rgb(40, 39, 39);
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+  height: 31rem;
+  backdrop-filter: blur(5px);
+}
+.inputs h1 {
+  text-align: center;
+  padding: 10px 0;
+  color: #ff9637;
+}
+
+.inputs form {
+  padding: 0 40px;
+  box-sizing: border-box;
+  color: silver;
+}
+
+.pass {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 1rem;
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  right: 1rem;
+}
+
+form .form-input {
+  position: relative;
+  background-color: black;
+  border-radius: 8px;
+  margin: 30px 0;
+}
+
+.form-input input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  background: none;
+  outline: none;
+  color: silver;
+}
+.form-input label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  font-weight: 900;
+  transform: translateY(-50%);
+  font-size: 20px;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.form-input span::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: whitesmoke;
+  transition: 0.5s;
+}
+.form-input input:focus ~ label,
+.form-input input:valid ~ label {
+  top: -11px;
+  color: #ff9637;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+input[type="submit"]:hover {
+  transition: 0.5s;
+}
+
+.signup {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 18px;
+  color: #666666;
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  margin-left: 6rem;
+  color: #ff9637;
+  background-color: #ff9637;
+  color: black;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.or {
+  text-align: center;
+  color: #adadad;
+  font-weight: 600;
+}
+
+.icons {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.google,
+.facebook {
+  height: 2rem;
+  width: 3.5rem;
+  background-color: #ff9637;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,12 +1,38 @@
-import React from 'react'
-import Home from './Pages/Home'
+import { React, useContext } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { AuthContext } from "./context/AuthContext";
+import Register from "./Pages/Register";
+import Login from "./Pages/Login";
+import Home from "./Pages/Home";
+import "./App.css";
 
-const App = () => {
+function App() {
+  const { currentUser } = useContext(AuthContext);
+
+  const ProtectedRoute = ({ children }) => {
+    if (!currentUser) {
+      return <Navigate to="/login" />;
+    }
+    return children;
+  };
   return (
-    <div>
-<Home/>
-    </div>
-  )
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route
+    //       path="/"
+    //       element={
+    //         <ProtectedRoute>
+    //           <Home />
+    //         </ProtectedRoute>
+    //       }
+    //     />
+
+    //     <Route path="/login" element={<Login />} />
+    //     <Route path="/register" element={<Register />} />
+    //   </Routes>
+    // </BrowserRouter>
+    <Home/>
+  );
 }
 
-export default App
+export default App;
