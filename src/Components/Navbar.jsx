@@ -9,7 +9,9 @@ const Navbar = () => {
     <div className="flex items-center justify-evenly ">
       <div className="flex items-center">
         <img src={logo} alt="" className="h-[5rem] w-[4rem]" />
-        <h1 className=" text-white font-logo text-[1.5rem]">MOVIE HUB</h1>
+        <h1 className=" text-white font-logo text-[1.5rem] bg-gradient-to-r from-orange-500 to-orange-700 bg-clip-text text-transparent">
+          MOVIE HUB
+        </h1>
       </div>
 
       <div>

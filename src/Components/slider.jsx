@@ -52,7 +52,7 @@ const Slider = () => {
         responsive={responsive}
         infinite={true}
         autoPlaySpeed={2000}
-        autoPlay={false}
+        autoPlay={true}
       >
         <div className="relative">
           <a href="https://www.youtube.com/watch?v=kNpwAxnjbNA">
