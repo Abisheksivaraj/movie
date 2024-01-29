@@ -1,46 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-  .home{
+@layer components {
+  .home {
     @apply font-logo text-[white] bg-black h-[2rem] w-[5rem] p-1 text-center rounded-md text-[1rem] hover:bg-[#ff9637] cursor-pointer scale-[1.2] hover:scale-[1.3]  transition duration-[400ms];
   }
 
-  .shows{
+  .shows {
     @apply font-logo text-[white] bg-black h-[2rem] w-[8rem] p-1 text-center rounded-md text-[1rem] hover:bg-[#ff9637] cursor-pointer scale-[1.2] hover:scale-[1.3]  transition duration-[400ms];
   }
 
-  .animi{
+  .animi {
     @apply font-logo text-[white] bg-black h-[2rem] w-[10rem] p-1 text-center rounded-md text-[1rem] hover:bg-[#ff9637] cursor-pointer scale-[1.2] hover:scale-[1.3]  transition duration-[400ms];
   }
 
-  .side{
+  .side {
     @apply text-[1.5rem] hover:h-[1.5rem] w-[1.5rem] hover:bg-[#ff9637]  rounded-sm  cursor-pointer scale-[1.2] hover:scale-[1.3]  transition duration-[400ms];
   }
 
-  .profile{
-    @apply  h-[2rem] w-[2rem] rounded-full  hover:bg-[#ff9637] text-center  cursor-pointer scale-[1.2] hover:scale-[1.3]  transition duration-[400ms];
-}
-  
+  .profile {
+    @apply h-[1.75rem] w-[1.75rem] rounded-[50%]  hover:bg-[#ff9637] text-center  cursor-pointer scale-[1.2] hover:scale-[1.3]  transition duration-[400ms];
+  }
 }
 
-body{
+body {
   background-color: rgb(38, 38, 38);
   margin: 0;
   overflow-x: hidden;
 }
-
-
-
-
-
