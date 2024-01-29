@@ -1,4 +1,5 @@
 import React from "react";
+import "../../../src/App.css"
 import logo from "../../assets/logo1.png";
 import { FaSearch } from "react-icons/fa";
 import { TbSun } from "react-icons/tb";
@@ -9,7 +10,7 @@ const Navbar = () => {
     <div className="flex items-center justify-evenly ">
       <div className="flex items-center">
         <img src={logo} alt="" className="h-[5rem] w-[4rem]" />
-        <h1 className=" text-white font-logo text-[1.5rem] bg-gradient-to-r from-orange-500 to-orange-700 bg-clip-text text-transparent">
+        <h1 className=" text-white font-logo text-[1.75rem]" id="movie">
           MOVIE HUB
         </h1>
       </div>
@@ -26,7 +27,7 @@ const Navbar = () => {
         <input
           type="search"
           placeholder="Search"
-          className="bg-black placeholder:text-[white] font-logo  outline-none font-[300]  text-[white] w-[5rem] "
+          className="bg-black placeholder:text-[white] font-nav  outline-none font-[300]  text-[white] text-[1rem]  w-[5rem] "
         />
         <label>
           <FaSearch className="text-[#ff9637] cursor-pointer" />

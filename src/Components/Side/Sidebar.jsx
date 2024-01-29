@@ -10,7 +10,7 @@ const Sidebar = () => {
   const [isOpenPopup, setIsOpenPopup] = useState(true);
   return (
     <div>
-      <div className="flex-1 flex h-[24rem]  mt-[5rem] w-12 rounded-md bg-black  p-3">
+      <div className="flex-1 flex h-[24rem]  mt-[5rem] w-12 rounded-lg bg-black  p-3 ml-5">
         <div className="mt-6 text-center">
           <ul className="flex flex-col gap-[3rem] text-[white]">
             <li>

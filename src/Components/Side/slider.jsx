@@ -34,7 +34,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="slider-container absolute top-[8rem] w-[70rem] left-[7rem]">
+    <div className="slider-container absolute top-[6rem] w-[70rem] left-[7rem]">
       <Carousel
         swipeable={true}
         draggable={false}

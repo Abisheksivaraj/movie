@@ -12,6 +12,7 @@ export default {
         joe: ["Dancing Script", "cursive"],
         parking: ["Noto Sans", "sans - serif"],
         fast: ["Archivo Black", 'sans - serif'],
+        nav:['Cute Font', 'sans-serif']
       },
     },
   },

@@ -8,11 +8,11 @@ const Popup = ({ setIsOpenPopup }) => {
     <div className="w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.7)] absolute top-0 left-0 z-[111111] flex justify-center items-center">
       <div className=" flex items-center justify-center">
         <div className=" h-[25rem] w-[45rem] bg-[#fdd1d1] rounded-3xl relative">
-          <h1>
+          <div>
             <h1 className="p-2 text-[3rem]  text-[#7a6f6f] underline">
               User Profile
             </h1>
-          </h1>
+          </div>
           <div className="absolute left-[18rem]">
             <img
               src={profile}

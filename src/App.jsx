@@ -7,6 +7,7 @@ import Home from "./Pages/Home";
 import Language from "./Components/Side/Language";
 import Popup from "./Components/Side/popup";
 import "./App.css";
+import Homee from "./Components/Nav/Homee";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -33,7 +34,7 @@ function App() {
     //     <Route path="/register" element={<Register />} />
     //   </Routes>
     // </BrowserRouter>
-    <Home />
+    <Homee />
   );
 }
 
