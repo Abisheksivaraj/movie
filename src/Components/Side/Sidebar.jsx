@@ -7,9 +7,9 @@ import { IoLogOutOutline } from "react-icons/io5";
 import Popup from "./popup";
 
 const Sidebar = () => {
-  const [isOpenPopup, setIsOpenPopup] = useState(true);
+  const [isOpenPopup, setIsOpenPopup] = useState(false);
   return (
-    <div>
+    <div className="fixed">
       <div className="flex-1 flex h-[24rem]  mt-[5rem] w-12 rounded-lg bg-black  p-3 ml-5">
         <div className="mt-6 text-center">
           <ul className="flex flex-col gap-[3rem] text-[white]">
