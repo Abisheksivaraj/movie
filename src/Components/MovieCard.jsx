@@ -9,10 +9,10 @@ const MovieCard = ({ movie }) => {
         <img
           src={`${IMAGE_PATH}${movie.poster_path}`}
           alt=""
-          className="h-[25rem] w-[30rem]"
+          className="h-[25rem] w-[20rem] hover:scale-[1.1]  transition duration-[400ms] rounded-xl ml-5"
         />
       ) : null}
-      <h5 className="text-[1.5rem] text-[white]">{movie.title}</h5>
+      <h5 className="text-[1.5rem] text-[white] ml-7">{movie.title}</h5>
     </div>
   );
 };

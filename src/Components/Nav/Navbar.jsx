@@ -1,14 +1,24 @@
-import React from "react";
-import "../../../src/App.css"
+import { React, useState } from "react";
+import "../../../src/App.css";
 import logo from "../../assets/logo1.png";
 import { FaSearch } from "react-icons/fa";
 import { TbSun } from "react-icons/tb";
+import Homee from "./Homee";
 import { IoMoonOutline } from "react-icons/io5";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
+  // console.log();
+  const { searchKey, setSearchKey } = useContext(AuthContext);
+  // const { searchKey, setsearchKey } = useState("");
+  console.log(searchKey);
+  const searchMovies = (e) => {
+    e.preventDefault();
+  };
   return (
     <div>
-      <div className="flex items-center justify-evenly  ">
+      <div className="flex items-center justify-evenly  fixed z-10  w-[70rem] ml-[6rem] rounded-full bg-[rgba(47,47,47,0.6)] shadow-lg shadow-[#ff9637]/30 mt-2">  
         <div className="flex items-center">
           <img src={logo} alt="" className="h-[5rem] w-[4rem]" />
           <h1 className=" text-white font-logo text-[1.75rem]" id="movie">
@@ -29,6 +39,8 @@ const Navbar = () => {
             type="search"
             placeholder="Search"
             className="bg-black placeholder:text-[white] font-nav  outline-none font-[300]  text-[white] text-[1rem]  w-[5rem] "
+            onSubmit={searchMovies}
+            onChange={(e) => setSearchKey(e.target.value)}
           />
           <label>
             <FaSearch className="text-[#ff9637] cursor-pointer" />
@@ -38,6 +50,7 @@ const Navbar = () => {
           <TbSun />
         </div>
       </div>
+      <Homee />
     </div>
   );
 };

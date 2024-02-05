@@ -1,41 +1,17 @@
-import { React, useContext } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { AuthContext } from "./context/AuthContext";
-import Register from "./Pages/Register";
-import Login from "./Pages/Login";
-import Home from "./Pages/Home";
-import Language from "./Components/Side/Language";
-import Popup from "./Components/Side/popup";
-import "./App.css";
-import Homee from "./Components/Nav/Homee";
+import React from "react";
+import Register from "../src/Pages/Register";
+import Login from "../src/Pages/Login";
+import Navbar from "../src/Components/Nav/Navbar";
+import Home from "../src/Pages/Home";
+import Language from "../src/Components/Side/Language";
+import Sidebar from "./Components/Side/Sidebar";
 
-function App() {
-  const { currentUser } = useContext(AuthContext);
-
-  const ProtectedRoute = ({ children }) => {
-    if (!currentUser) {
-      return <Navigate to="/login" />;
-    }
-    return children;
-  };
+const App = () => {
   return (
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route
-    //       path="/"
-    //       element={
-    //         <ProtectedRoute>
-    //           <Home />
-    //         </ProtectedRoute>
-    //       }
-    //     />
-
-    //     <Route path="/login" element={<Login />} />
-    //     <Route path="/register" element={<Register />} />
-    //   </Routes>
-    // </BrowserRouter>
-    <Homee />
+    <div>
+      <Sidebar />
+    </div>
   );
-}
+};
 
 export default App;

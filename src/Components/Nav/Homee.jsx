@@ -5,6 +5,7 @@ import { FaSearch } from "react-icons/fa";
 import Navbar from "../Nav/Navbar";
 import Sidebar from "../Side/Sidebar";
 import MovieCard from "../MovieCard";
+import { useContext } from "react";
 
 const Homee = () => {
   const API_URL = "https://api.themoviedb.org/3";
@@ -15,16 +16,12 @@ const Homee = () => {
   const fetchMovies = async () => {
     const {
       data: { results },
-    } = await axios.get(
-      `${API_URL}/discover/movie?api_key=${API_KEY}&with_original_language=${'te'}`,
-      {
-        params: {
-          api_key: API_KEY,
-        },
-      }
-    );
+    } = await axios.get(`${API_URL}/discover/movie?query=Avengers`, {
+      params: {
+        api_key: API_KEY,
+      },
+    });
     console.log(results);
-
     setMovies(results);
   };
 
@@ -37,10 +34,8 @@ const Homee = () => {
 
   return (
     <div>
-      <div className="relative">
-        <Navbar />
-        <Sidebar />
-      </div>
+      <div className="relative">{/* <Sidebar /> */}</div>
+
       <div className="container">{renderMovies()}</div>
     </div>
   );
