@@ -4,13 +4,12 @@ import Navbar from "../Components/Nav/Navbar";
 import Sidebar from "../Components/Side/Sidebar";
 import Slider from "../Components/Side/slider";
 
-
 const Home = () => {
   return (
     <div>
       <Navbar />
-      {/* <Sidebar />
-      <Slider/> */}
+      <Sidebar />
+      <Slider />
     </div>
   );
 };

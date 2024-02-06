@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaSearch } from "react-icons/fa";
-import Navbar from "../Nav/Navbar";
+import Slider from "../Side/slider";
 import Sidebar from "../Side/Sidebar";
 import MovieCard from "../MovieCard";
 import { useContext } from "react";
@@ -34,7 +34,10 @@ const Homee = () => {
 
   return (
     <div>
-      <div className="relative">{/* <Sidebar /> */}</div>
+      <div className="relative">
+        <Sidebar />
+        <Slider />
+      </div>
 
       <div className="container">{renderMovies()}</div>
     </div>

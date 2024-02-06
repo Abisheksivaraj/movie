@@ -12,8 +12,6 @@ import moneyheist from "../../assets/Slideer-images/moneyheist.webp";
 import parking from "../../assets/Slideer-images/parking.webp";
 import japan from "../../assets/Slideer-images/japan.jpg";
 
-
-
 const Slider = () => {
   const responsive = {
     desktop: {
@@ -34,7 +32,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="slider-container absolute top-[6rem] w-[70rem] left-[7rem]">
+    <div className="slider-container absolute top-[7rem] w-[70rem] left-[7rem]">
       <Carousel
         swipeable={true}
         draggable={false}
@@ -49,7 +47,7 @@ const Slider = () => {
             <img
               src={ayalaan}
               alt=""
-              className=" h-[500px] rounded-lg  w-screen hover:scale-[1.3]  transition duration-[400ms] cursor-pointer"
+              className="h-[455px] rounded-lg  w-screen hover:scale-[1.3]  transition duration-[400ms] cursor-pointer"
             />
           </a>
 
@@ -82,7 +80,7 @@ const Slider = () => {
             <img
               src={captainmiller}
               alt=""
-              className="w-screen h-[500px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] cursor-pointer "
+              className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] cursor-pointer "
             />
           </a>
           <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
@@ -120,7 +118,7 @@ const Slider = () => {
             <img
               src={japan}
               alt=""
-              className="w-screen h-[500px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] "
+              className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] "
             />
           </a>
           <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
@@ -154,7 +152,7 @@ const Slider = () => {
             <img
               src={leo}
               alt=""
-              className="w-screen h-[500px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] "
+              className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] "
             />
           </a>{" "}
           <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
@@ -188,7 +186,7 @@ const Slider = () => {
           <img
             src={joe}
             alt=""
-            className="w-screen h-[500px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] "
+            className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] "
           />
 
           <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
@@ -221,7 +219,7 @@ const Slider = () => {
           <img
             src={parking}
             alt=""
-            className="w-screen h-[500px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] "
+            className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] "
           />
 
           <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
@@ -255,7 +253,7 @@ const Slider = () => {
           <img
             src={hinana}
             alt=""
-            className="w-screen h-[500px] rounded-lg hover:scale-[1.3]  transition duration-[400ms]"
+            className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms]"
           />
 
           <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
@@ -284,7 +282,7 @@ const Slider = () => {
           <img
             src={moneyheist}
             alt=""
-            className="w-screen h-[500px] rounded-lg hover:scale-[1.3]  transition duration-[400ms]"
+            className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms]"
           />
 
           <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
@@ -322,7 +320,7 @@ const Slider = () => {
             <img
               src={fastx}
               alt=""
-              className="w-screen h-[500px] rounded-lg hover:scale-[1.3]  transition duration-[400ms]"
+              className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms]"
             />
           </a>
 
@@ -356,7 +354,7 @@ const Slider = () => {
           <img
             src={salar}
             alt=""
-            className="w-screen h-[500px] rounded-lg hover:scale-[1.3]  transition duration-[400ms]"
+            className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms]"
           />
 
           <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">

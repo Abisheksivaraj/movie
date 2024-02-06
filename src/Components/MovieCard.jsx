@@ -4,15 +4,20 @@ const MovieCard = ({ movie }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
   console.log(movie);
   return (
-    <div className="">
+    <div className="hover:scale-[1.05]  transition duration-[500ms] flex flex-col items-center text-center px-[10%]">
       {movie.poster_path ? (
         <img
           src={`${IMAGE_PATH}${movie.poster_path}`}
           alt=""
-          className="h-[25rem] w-[20rem] hover:scale-[1.1]  transition duration-[400ms] rounded-xl ml-5"
+          className="h-[18rem] w-[18rem] rounded-xl ml-5"
         />
       ) : null}
-      <h5 className="text-[1.5rem] text-[white] ml-7">{movie.title}</h5>
+      <h5
+        className="text-[1.5rem] mt-2 text-[white] font-serif font-semibold  text-center"
+        id="color"
+      >
+        {movie.title}
+      </h5>
     </div>
   );
 };
