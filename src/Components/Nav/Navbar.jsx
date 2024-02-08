@@ -77,7 +77,7 @@ const Navbar = () => {
           <TbSun />
         </div>
       </div>
-      {/* <Homee /> */}
+    
     </div>
   );
 };

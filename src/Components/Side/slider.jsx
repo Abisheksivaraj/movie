@@ -51,13 +51,13 @@ const Slider = () => {
             />
           </a>
 
-          <div className="absolute top-[7rem] left-[1rem] w-full h-[455px] flex flex-row items-center z-1">
+          <div className="absolute top-[5rem] left-[1rem] w-full h-[455px] flex flex-row items-center z-1">
             <div className="">
               <div className="flex flex-row text-[#fff] w-[45rem]">
                 <div className="flex flex-col gap-4 w-full">
-                  <h1 className="text-6xl font-ayal">Ayalaan</h1>
+                  <h1 className="text-6xl font-ayal font-thin">Ayalaan</h1>
 
-                  <p className="text-lg mb-4 pb-2 w-[30rem]">
+                  <p className="text-lg mb-4 pb-2 w-[30rem] font-bold">
                     A lost alien seeks help to go back to his home, but
                     everything gets harder after the alien returns to its home.
                   </p>
@@ -75,7 +75,7 @@ const Slider = () => {
           </div>
         </div>
 
-        <div className="relative ">
+        <div className="w-full h-full relative z-0">
           <a href="https://www.youtube.com/watch?v=ujhWbKP1rKA">
             <img
               src={captainmiller}
@@ -83,18 +83,18 @@ const Slider = () => {
               className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] cursor-pointer "
             />
           </a>
-          <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
-            <div className="container">
-              <div className="flex flex-row mt-60 ml-60  text-white w-[45rem]">
+          <div className="absolute top-[7rem] left-[1rem] w-full h-[455px] flex flex-row items-center z-0 gap-5">
+            <div className="">
+              <div className="flex flex-row  text-white w-[45rem]">
                 <div className="flex flex-col gap-4 w-full">
-                  <h1 className="text-[2.5rem] font-miller relative mr-[29rem]">
+                  <h1 className="text-[2.5rem] font-miller relative bottom-10 left-7">
                     CAPTAIN
                   </h1>
-                  <span className="text-[4rem] font-miller absolute top-[13rem]">
+                  <span className="text-[4rem] font-miller absolute top-[8rem]">
                     MILLER
                   </span>
 
-                  <p className="text-lg mb-4 pb-2 mt-10 w-[40rem]">
+                  <p className="text-lg w-[40rem] font-bold">
                     Set in 1930s-1940s in British India and follows an outlaw
                     called miller who engages in bloody loots,heists and
                     assaults.
@@ -121,15 +121,15 @@ const Slider = () => {
               className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] "
             />
           </a>
-          <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
-            <div className="container">
+          <div className="absolute top-[-2rem] left-[-13rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
+            <div className="">
               <div className="flex flex-row mt-60 ml-60  text-white w-[45rem]">
                 <div className="flex flex-col gap-4 w-full">
                   <h1 className="text-[5rem] font-bold font-japan mr-[27rem]">
                     JAPAN
                   </h1>
 
-                  <p className="text-lg mb-4 pb-2 w-[30rem]">
+                  <p className="text-lg mb-4 pb-2 w-[30rem] font-bold">
                     A daring robbery in a jewellery showroom kickstarts the hunt
                     for Japan, a notorious robber, who is a law unto himself.
                   </p>
@@ -155,15 +155,15 @@ const Slider = () => {
               className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] "
             />
           </a>{" "}
-          <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
-            <div className="container">
+          <div className="absolute top-[-2rem] left-[-13rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
+            <div className="">
               <div className="flex flex-row mt-60 ml-60  text-white w-[45rem]">
                 <div className="flex flex-col gap-4 w-full">
                   <h1 className="text-[5rem] font-bold font-leo mr-[35rem] ">
                     LEO
                   </h1>
 
-                  <p className="text-lg mb-4 pb-2 w-[30rem]">
+                  <p className="text-lg mb-4 pb-2 w-[30rem] font-bold">
                     Parthiban is a mild-mannered cafe owner in Kashmir, who
                     fends off a gang of murderous thugs and gains attention from
                     a drug cartel claiming he was once a part of them.
@@ -189,15 +189,15 @@ const Slider = () => {
             className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] "
           />
 
-          <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
-            <div className="container">
+          <div className="absolute top-[-3rem] left-[-13rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
+            <div className="">
               <div className="flex flex-row mt-60 ml-60  text-white w-[45rem]">
                 <div className="flex flex-col gap-4 w-full">
-                  {/* <h1 className="text-[8rem] font-bold font-joe text-[red] mr-[27rem]">
+                  <h1 className="text-[8rem] font-bold font-joe text-[red] mr-[27rem]">
                     joe
-                  </h1> */}
+                  </h1>
 
-                  <p className="text-lg mb-4 pb-2 w-[30rem] text-[black]">
+                  <p className="text-lg mb-4 pb-2 w-[30rem] text-[black] font-bold">
                     The romance of a young man who is in love with his college
                     mate ends in heartbreak.
                   </p>
@@ -222,15 +222,15 @@ const Slider = () => {
             className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms] "
           />
 
-          <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
-            <div className="container">
+          <div className="absolute top-[-1rem] left-[-13rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
+            <div className="">
               <div className="flex flex-row mt-60 ml-60  text-white w-[45rem]">
                 <div className="flex flex-col gap-4 w-full">
                   <h1 className="text-6xl font-parking font-bold mr-[27rem] ">
                     PARKING
                   </h1>
 
-                  <p className="text-lg mb-4 pb-2 w-[30rem]">
+                  <p className="text-lg mb-4 pb-2 w-[30rem] font-bold">
                     An elderly man and a youngster who are tenants sharing two
                     different floors of an individual house fight over a parking
                     space.
@@ -256,11 +256,11 @@ const Slider = () => {
             className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms]"
           />
 
-          <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
-            <div className="container">
+          <div className="absolute top-[2rem] left-[-13rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
+            <div className="">
               <div className="flex flex-row mt-60 ml-60  text-white w-[45rem]">
                 <div className="flex flex-col gap-4 w-full">
-                  <p className="text-lg mb-4 pb-2 w-[30rem]">
+                  <p className="text-lg mb-4 pb-2 w-[30rem] font-bold">
                     A lost alien seeks help to go back to his home, but
                     everything gets harder after the alien returns to its home.
                   </p>
@@ -285,18 +285,18 @@ const Slider = () => {
             className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms]"
           />
 
-          <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
-            <div className="container">
+          <div className="absolute top-[-1rem] left-[-13rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
+            <div className="">
               <div className="flex flex-row mt-60 ml-60  text-white w-[45rem]">
                 <div className="flex flex-col gap-4 w-full">
                   <div className="flex items-center font-bold">
                     <h1 className="text-6xl font-parking ">MONEY </h1>
-                    <span className="bg-[red] w-[12rem] h-[5rem]  text-center  text-[4rem]">
+                    <span className="bg-[red] w-[12rem] h-[5rem]  text-center flex items-center justify-center  text-[4rem]">
                       HEIST
                     </span>
                   </div>
 
-                  <p className="text-lg mb-4 pb-2 w-[30rem]">
+                  <p className="text-lg mb-4 pb-2 w-[30rem] font-bold">
                     An unusual group of robbers attempt to carry out the most
                     perfect robbery in Spanish history - stealing 2.4 billion
                     euros from the Royal Mint of Spain.
@@ -324,15 +324,15 @@ const Slider = () => {
             />
           </a>
 
-          <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
-            <div className="container">
+          <div className="absolute top-[-1rem] left-[-13rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
+            <div className="">
               <div className="flex flex-row mt-60 ml-60  text-white w-[45rem]">
                 <div className="flex flex-col gap-4 w-full">
                   <h1 className="text-[5rem] font-fast font-bold mr-[28rem]">
                     FAST X
                   </h1>
 
-                  <p className="text-lg mb-4 pb-2 w-[30rem]">
+                  <p className="text-lg mb-4 pb-2 w-[30rem] font-bold">
                     Dom Toretto and his family are targeted by the vengeful son
                     of drug kingpin Hernan Reyes.
                   </p>
@@ -357,11 +357,11 @@ const Slider = () => {
             className="w-screen h-[455px] rounded-lg hover:scale-[1.3]  transition duration-[400ms]"
           />
 
-          <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
-            <div className="container">
+          <div className="absolute top-[2rem] left-[-13rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
+            <div className="">
               <div className="flex flex-row mt-60 ml-60  text-white w-[45rem]">
                 <div className="flex flex-col gap-4 w-full">
-                  <p className="text-lg mb-4 pb-2 w-[30rem]">
+                  <p className="text-lg mb-4 pb-2 w-[30rem] font-bold">
                     The fate of a violently contested kingdom hangs on the
                     fraught bond between two friends-turned-foes in this saga of
                     power, bloodshed and betrayal.
