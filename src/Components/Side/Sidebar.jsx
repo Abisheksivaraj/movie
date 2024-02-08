@@ -14,7 +14,7 @@ const SideBar = () => {
   return (
     <div>
       <div
-        className="fixed top-0 left-0 w-16 h-[30rem] flex flex-col items-center justify-center
+        className="z-20 fixed top-0 left-0 w-16 h-[30rem] flex flex-col items-center justify-center
                 bg-[rgba(47,47,47,0.6)] shadow-lg shadow-[#ff9637]/50 dark:bg-gray-900 shadow-lg mt-[6rem] ml-5  rounded-3xl fixed "
       >
         <img
@@ -55,9 +55,7 @@ const SideBar = () => {
 const SideBarIcon = ({ icon, text }) => (
   <div className="sidebar-icon group">
     {icon}
-    <span className="sidebar-tooltip group-hover:scale-100 ">
-      {text}
-    </span>
+    <span className="sidebar-tooltip group-hover:scale-100 ">{text}</span>
   </div>
 );
 

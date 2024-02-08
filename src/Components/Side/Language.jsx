@@ -17,12 +17,9 @@ const Language = () => {
         <div className="grid grid-cols-3 gap-[2rem] absolute top-[10rem] left-[10rem]">
           <div className=" relative">
             <div className=" bg-slate-300 h-[11rem] w-[20rem] rounded-xl relative cursor-pointer hover:scale-[1.1]  transition duration-[400ms]">
-              <h1 className="text-[2rem] font-japan font-bold absolute left-[10rem] top-[5rem] p-3">
-                Tamil
-              </h1>
-              <h2 className="text-[2.5rem] font-japan font-bold absolute left-[10rem] top-[3rem]">
+              <h1 className="text-[2.5rem] font-japan font-bold absolute left-[10rem] top-[4rem]">
                 தமிழ்
-              </h2>
+              </h1>
 
               <img
                 src={tamil}
@@ -34,12 +31,9 @@ const Language = () => {
 
           <div className=" relative">
             <div className=" bg-slate-500 h-[11rem] w-[20rem] rounded-xl relative cursor-pointer hover:scale-[1.1]  transition duration-[400ms]">
-              <h1 className="text-[2rem] font-japan font-bold absolute left-[10rem] top-[5rem] p-3">
-                Telugu
-              </h1>
-              <h2 className="text-[2.5rem] font-japan font-bold absolute left-[10rem] top-[3rem]">
+              <h1 className="text-[2.5rem] font-japan font-bold absolute left-[10rem] top-[4rem]">
                 తెలుగు
-              </h2>
+              </h1>
 
               <img
                 src={telugu}
@@ -51,12 +45,9 @@ const Language = () => {
 
           <div className=" relative">
             <div className=" bg-gray-400 h-[11rem] w-[20rem] rounded-xl relative cursor-pointer hover:scale-[1.1]  transition duration-[400ms]">
-              <h1 className="text-[2rem] font-japan font-bold absolute left-[10rem] top-[5rem] p-3">
-                Kannada
+              <h1 className="text-[2rem] font-japan font-bold absolute left-[10rem] top-[4rem] p-3">
+                ಕನ್ನಡ
               </h1>
-              <h2 className="text-[2.5rem] font-japan font-bold absolute left-[10rem] top-[3rem]">
-                தமிழ்
-              </h2>
 
               <img
                 src={kannada}
@@ -68,12 +59,9 @@ const Language = () => {
 
           <div className=" relative">
             <div className=" bg-zinc-500 h-[11rem] w-[20rem] rounded-xl relative cursor-pointer hover:scale-[1.1]  transition duration-[400ms]">
-              <h1 className="text-[1.8rem] font-japan font-bold absolute left-[10rem] top-[6rem]">
-                Malayalam
-              </h1>
-              <h2 className="text-[1.8rem] font-japan font-bold absolute left-[9.7rem] top-[4rem]">
+              <h1 className="text-[1.8rem] font-japan font-bold absolute left-[9.7rem] top-[4rem]">
                 മലയാളം
-              </h2>
+              </h1>
 
               <img
                 src={malayalam}
@@ -85,12 +73,9 @@ const Language = () => {
 
           <div className=" relative">
             <div className=" bg-stone-500 h-[11rem] w-[20rem] rounded-xl relative cursor-pointer hover:scale-[1.1]  transition duration-[400ms]">
-              <h1 className="text-[2rem] font-japan font-bold absolute left-[10rem] top-[5rem] p-3">
-                Hindi
-              </h1>
-              <h2 className="text-[2.5rem] font-japan font-bold absolute left-[10rem] top-[3rem]">
+              <h1 className="text-[2.5rem] font-japan font-bold absolute left-[10rem] top-[4rem]">
                 हिन्दी
-              </h2>
+              </h1>
 
               <img
                 src={hindi}
@@ -102,7 +87,7 @@ const Language = () => {
 
           <div className=" relative">
             <div className=" bg-stone-300 h-[11rem] w-[20rem] rounded-xl relative cursor-pointer hover:scale-[1.1]  transition duration-[400ms]">
-              <h1 className="text-[2rem] font-japan font-bold absolute left-[10rem] top-[5rem] p-3">
+              <h1 className="text-[2rem] font-japan font-bold absolute left-[10rem] top-[4rem] p-3">
                 English
               </h1>
 
@@ -120,29 +105,6 @@ const Language = () => {
 };
 
 export default Language;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React from "react";
 // import { useEffect, useState } from "react";

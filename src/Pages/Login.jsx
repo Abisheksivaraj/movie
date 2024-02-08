@@ -4,6 +4,7 @@ import { FaGoogle } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import "../styles/Login.css";
+import { NavLink } from "react-router-dom";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -56,9 +57,9 @@ const Login = () => {
             <a href="">Forget Password?</a>
           </div>
 
-          <button type="submit" className="signup">
+          <NavLink type="submit" className="signup" to={"/home"}>
             Login
-          </button>
+          </NavLink>
         </form>
 
         <div className="or">OR</div>

@@ -3,7 +3,7 @@ import "../../../src/App.css";
 import logo from "../../assets/logo1.png";
 import { FaSearch } from "react-icons/fa";
 import { TbSun } from "react-icons/tb";
-import Homee from "./Homee";
+// import Homee from "./Homee";
 import { useNavigate, Link, NavLink } from "react-router-dom";
 import { IoMoonOutline } from "react-icons/io5";
 import { useContext } from "react";
@@ -37,7 +37,7 @@ const Navbar = () => {
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
             >
               <li className="home">
-                <Link to="/Homee">HOME</Link>
+                <Link to="/home">HOME</Link>
               </li>
             </NavLink>
 
@@ -77,7 +77,7 @@ const Navbar = () => {
           <TbSun />
         </div>
       </div>
-      <Homee />
+      {/* <Homee /> */}
     </div>
   );
 };

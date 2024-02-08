@@ -40,9 +40,9 @@ const Slider = () => {
         responsive={responsive}
         infinite={true}
         autoPlaySpeed={2000}
-        autoPlay={true}
+        autoPlay={false}
       >
-        <div className="relative">
+        <div className="w-full h-full relative z-0">
           <a href="https://www.youtube.com/watch?v=kNpwAxnjbNA">
             <img
               src={ayalaan}
@@ -51,11 +51,11 @@ const Slider = () => {
             />
           </a>
 
-          <div className="absolute top-[-1rem] left-[-9rem] w-96 h-96 flex flex-row items-center bg-[rgba(24, 29, 56, .7)]">
-            <div className="container">
-              <div className="flex flex-row mt-60 ml-60  text-white w-[45rem]">
+          <div className="absolute top-[7rem] left-[1rem] w-full h-[455px] flex flex-row items-center z-1">
+            <div className="">
+              <div className="flex flex-row text-[#fff] w-[45rem]">
                 <div className="flex flex-col gap-4 w-full">
-                  <h1 className="text-6xl font-ayal mr-[20rem] ">Ayalaan</h1>
+                  <h1 className="text-6xl font-ayal">Ayalaan</h1>
 
                   <p className="text-lg mb-4 pb-2 w-[30rem]">
                     A lost alien seeks help to go back to his home, but

@@ -5,8 +5,7 @@ import Sidebar from "../Side/Sidebar";
 const Tv = () => {
   return (
     <div>
-      <Navbar />
-      <Sidebar />
+      <h1>hello</h1>
     </div>
   );
 };

@@ -3,10 +3,10 @@ import Navbar from "../Nav/Navbar";
 import Sidebar from "../Side/Sidebar";
 
 const Anime = () => {
+  console.log(`anime compoen`);
   return (
     <div>
-      <Navbar />
-      <Sidebar />
+      <h1>Anime</h1>
     </div>
   );
 };
