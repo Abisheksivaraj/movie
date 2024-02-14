@@ -23,7 +23,7 @@ const Navbar = () => {
     "bg-[#ff9637] cursor-pointer scale-[1.2] hover:scale-[1.3]  transition duration-[400ms]";
   const normalLink = "";
   return (
-    <div className="w-full flex justify-center px-[2.5%] pt-4 fixed z-10">
+    <div className="w-full flex justify-center px-[2.5%] pt-4  z-10 relative">
       <div className="flex items-center justify-evenly   w-[90%] rounded-full bg-[rgba(47,47,47,0.6)] shadow-lg shadow-[#ff9637]/30 mt-2">
         <div className="flex items-center">
           <img src={logo} alt="" className="h-[5rem] w-[4rem]" />
@@ -47,6 +47,15 @@ const Navbar = () => {
               to="/"
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
             >
+              <li className="home">
+                <Link to="/movies">MOVIES</Link>
+              </li>
+            </NavLink>
+
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? activeLink : normalLink)}
+            >
               <li className="shows">
                 <Link to="/TV">TV SHOWS</Link>
               </li>
@@ -63,7 +72,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="flex items-center h-[2.8rem] ml-5 w-[10rem] bg-black p-4 rounded-md">
+        {/* <div className="flex items-center h-[2.8rem] ml-5 w-[10rem] bg-black p-4 rounded-md">
           <input
             type="search"
             placeholder="Search"
@@ -74,10 +83,23 @@ const Navbar = () => {
           <label>
             <FaSearch className="text-[#ff9637] cursor-pointer ml-5" />
           </label>
-        </div>
+        </div> */}
         <div className="h-[2rem]  w-[2rem] p-1 bg-black text-center rounded-md text-[white] text-[1.5rem] cursor-pointer hover:bg-[#ff9637] scale-[1.2] hover:scale-[1.3]  transition duration-[400ms]">
           <TbSun />
         </div>
+      </div>
+
+      <div className="flex items-center h-[2.8rem] ml-5 w-[63rem] bg-[rgba(47,47,47,0.6)] p-4  absolute top-[7rem] right-[8rem]  rounded-full">
+        <input
+          type="search"
+          placeholder="Search"
+          className="bg-[rgba(47,47,47,0.6)] placeholder:text-[white] font-nav  outline-none font-[300]  text-[white] text-[2rem]  w-[69rem] h-[2.8rem] rounded-full p-6 "
+          onSubmit={searchMovies}
+          onChange={(e) => updateSearchQuery(e.target.value)}
+        />
+        <label>
+          <FaSearch className="text-[#ff9637] cursor-pointer  text-[1.5rem] " />
+        </label>
       </div>
     </div>
   );

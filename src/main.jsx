@@ -7,9 +7,10 @@ import { SearchProvider } from "./context/SearchContext.jsx";
 import { Outlet } from "react-router-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "../src/Pages/Login";
-import Home from "../src/Pages/Home";
+import HomePage from "../src/Pages/HomePage";
 import Register from "../src/Pages/Register";
-import Homee from "./Components/Nav/Homee";
+import Home from "../src/Components/Nav/Home.jsx"
+import Movies from "./Components/Nav/Movies.jsx";
 import Tv from "./Components/Nav/Tv";
 import Anime from "./Components/Nav/Anime";
 import Fav from "../src/Components/Side/Fav";
@@ -29,13 +30,22 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Homee />,
+        element: <Home />,
       },
     ],
   },
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/Movies",
+    element: (
+      <>
+        <Route></Route>
+        <Movies />
+      </>
+    ),
   },
   {
     path: "/Tv",

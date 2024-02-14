@@ -9,7 +9,7 @@ const MovieCard = ({ movie }) => {
         <img
           src={`${IMAGE_PATH}${movie.poster_path}`}
           alt=""
-          className="h-[18rem] w-[18rem] rounded-xl ml-5"
+          className="h-[17rem] w-[12rem] rounded-xl ml-5"
         />
       ) : null}
       <h5

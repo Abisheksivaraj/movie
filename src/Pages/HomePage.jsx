@@ -4,7 +4,7 @@ import Navbar from "../Components/Nav/Navbar";
 import Sidebar from "../Components/Side/Sidebar";
 import Slider from "../Components/Side/slider";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div>
       <Navbar />
@@ -14,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
