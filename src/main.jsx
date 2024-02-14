@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { AuthContextProvider } from "./context/AuthContext.jsx";
+import { SearchProvider } from "./context/SearchContext.jsx";
 import { Outlet } from "react-router-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "../src/Pages/Login";
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "Fav",
+    path: "/Fav",
     element: (
       <>
         <Route></Route>
@@ -95,7 +96,9 @@ const router = createBrowserRouter([
 const Router = ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthContextProvider>
-      <RouterProvider router={router} />
+      <SearchProvider>
+        <RouterProvider router={router} />
+      </SearchProvider>
     </AuthContextProvider>
   </React.StrictMode>
 );

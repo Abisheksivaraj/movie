@@ -25,7 +25,7 @@ const SideBar = () => {
         />
         {isOpenPopup && <Popup setIsOpenPopup={setIsOpenPopup} />}
         {/* <Divider /> */}
-        <Link to="Favorites">
+        <Link to="/Fav">
           <SideBarIcon
             icon={<MdFavoriteBorder size={32} />}
             text={"Favorite"}
