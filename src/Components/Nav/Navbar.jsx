@@ -7,7 +7,7 @@ import { TbSun } from "react-icons/tb";
 import { useNavigate, Link, NavLink } from "react-router-dom";
 import { IoMoonOutline } from "react-icons/io5";
 import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
+// import { AuthContext } from "../../context/AuthContext";
 
 import { useSearch } from "../../context/SearchContext";
 

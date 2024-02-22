@@ -10,7 +10,7 @@ const Movies = () => {
   const { searchQuery } = useSearch();
   // console.log(useSearch());
   const API_KEY = "5e154d99ca5ac3638f39919adc68d648";
-  const Language = "ta";
+  // const Language = "ta";
   const [movies, setMovies] = useState([]);
 
   console.log(searchQuery);
@@ -44,16 +44,18 @@ const Movies = () => {
     fetchMovies(searchQuery);
   }, [searchQuery]);
 
+  const addToFavorites = (movie) => {
+    console.log("Added to favorites:", movie);
+  };
+
   const renderMovies = () =>
-    movies.map((movie) => <MovieCard key={movie.id} movie={movie} />);
+    movies.map((movie) => (
+      <MovieCard key={movie.id} movie={movie} addToFavorites={addToFavorites} />
+    ));
 
   return (
     <div>
-      {/* <div className="relative">
-        <Slider />
-      </div> */}
-
-      <div className="container">{renderMovies()}</div>
+      <div className="container-Anime">{renderMovies()}</div>
     </div>
   );
 };

@@ -12,7 +12,7 @@
   left: 2rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 25rem; /* Change the height of each row as needed */
+  grid-auto-rows: 25rem;
   gap: 1rem;
 }
 
@@ -24,6 +24,22 @@
   left: 5rem;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 25rem;
+  gap: 1rem;
+}
+
+.container-Anime {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 7rem;
+  left: 5rem;
+
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 25rem;
   gap: 1rem;
 }

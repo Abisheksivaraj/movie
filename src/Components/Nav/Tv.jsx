@@ -1,63 +1,24 @@
-// import React from "react";
-// import { useEffect, useState } from "react";
-// import axios from "axios";
-// import TvCard from "../TvCard"
-
-// const Tv = () => {
-//   const API_URL = "https://api.themoviedb.org/3";
-//   const API_KEY = "5e154d99ca5ac3638f39919adc68d648";
-//   const Language = "ta";
-//   const [tvShows, setTvShows] = useState([]);
-
-//   const fetchTvShows = async () => {
-//     const {
-//       data: { results },
-//     } = await axios.get(
-//       `${API_URL}search/tv
-// `,
-//       {
-//         params: {
-//           api_key: API_KEY,
-//         },
-//       }
-//     );
-//     console.log(results);
-//     setTvShows(results);
-//   };
-
-//   useEffect(() => {
-//     fetchTvShows();
-//   }, []);
-
-//   const renderTvShows = () =>
-//     tvShows.map((tv) => <TvCard key={tv.id} tvShows={tv} />);
-//   return (
-//     <div>
-//       <div className="container">{renderTvShows()}</div>
-//     </div>
-//   );
-// };
-
-// export default Tv;
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import TvCard from "../TvCard";
+import { useSearch } from "../../context/SearchContext";
 
 const Tv = () => {
-  // const API_URL = "https://api.themoviedb.org/3/";
-  const API_URL_TV = "https://api.themoviedb.org/3/discover/tv";
+  const { searchQuery } = useSearch();
+
   const API_KEY = "5e154d99ca5ac3638f39919adc68d648";
-  // const Language = "ta";
   const [tvShows, setTvShows] = useState([]);
 
-  const fetchTvShows = async (url) => {
+  const fetchTvShows = async (searchKey = "") => {
+    const type = searchKey ? "search" : "discover";
+    const API_URL_TV = `https://api.themoviedb.org/3/${type}/tv`;
     try {
       const {
         data: { results },
-      } = await axios.get(`${url}`, {
+      } = await axios.get(`${API_URL_TV}`, {
         params: {
           api_key: API_KEY,
+          query: searchQuery,
         },
       });
       // console.log(results);
@@ -68,11 +29,23 @@ const Tv = () => {
   };
 
   useEffect(() => {
-    fetchTvShows(API_URL_TV);
+    console.log("inside useeffect " + searchQuery);
+    fetchTvShows(searchQuery);
   }, []);
 
+  useEffect(() => {
+    console.log("inside useeffect " + searchQuery);
+    fetchTvShows(searchQuery);
+  }, [searchQuery]);
+
+  const addToFavorites = (movie) => {
+    console.log("Added to favorites:", movie);
+  };
+
   const renderTvShows = () =>
-    tvShows.map((tv) => <TvCard key={tv.id} tv={tv} />);
+    tvShows.map((tv) => (
+      <TvCard key={tv.id} tv={tv} addToFavorites={addToFavorites} />
+    ));
 
   return (
     <div>
