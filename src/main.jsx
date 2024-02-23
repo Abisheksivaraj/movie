@@ -18,6 +18,7 @@ import Categories from "./Components/Side/Categories";
 import Language from "../src/Components/Side/Language";
 import Subscription from "../src/Components/Side/Subscription";
 import Route from "./Components/Route/Root.jsx";
+import { DarkModeProvider } from "./context/ThemeContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -107,7 +108,9 @@ const Router = ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthContextProvider>
       <SearchProvider>
-        <RouterProvider router={router} />
+        <DarkModeProvider>
+          <RouterProvider router={router} />
+        </DarkModeProvider>
       </SearchProvider>
     </AuthContextProvider>
   </React.StrictMode>
