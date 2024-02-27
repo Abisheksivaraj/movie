@@ -1,19 +1,15 @@
 import React from "react";
 import Navbar from "../Nav/Navbar";
 import SideBar from "../Side/Sidebar";
-import { Outlet } from "react-router-dom";
 
-const Route = () => {
+const Routee = ({ children }) => {
   return (
     <div>
-      <div className="fixed z-10 w-full">
-        <Navbar />
-      </div>
-
+      <Navbar />
+      <main>{children}</main>
       <SideBar />
-      <Outlet />
     </div>
   );
 };
 
-export default Route;
+export default Routee;

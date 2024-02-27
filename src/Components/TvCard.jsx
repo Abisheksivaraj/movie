@@ -1,5 +1,7 @@
 import React from "react";
 import { FaHeart } from "react-icons/fa";
+
+
 const TvCard = ({ tv }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
   console.log(tv);
