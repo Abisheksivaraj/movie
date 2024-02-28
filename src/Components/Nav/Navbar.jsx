@@ -15,6 +15,14 @@ const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  const handletoggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  // const handletoggleLightMode = () => {
+  //   setIsDarkMode(false);
+  // };
+
   const handleSearchClick = () => {
     setIsSearchOpen(!isSearchOpen);
   };
@@ -23,13 +31,6 @@ const Navbar = () => {
     setIsSearchOpen(false);
   };
 
-  const handletoggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
-  const handletoggleLightMode = () => {
-    setIsDarkMode(false);
-  };
   const handleClick = (name) => {
     setActiveLink(name);
   };
@@ -41,11 +42,13 @@ const Navbar = () => {
 
   return (
     <div
-      className={`w-full flex justify-center px-[2.5%] top-4 z-10 fixed ml-6 ${
-        isDarkMode ? "dark" : "light"
-      }`}
+      className={`w-full flex justify-center px-[2.5%] top-4 z-10 fixed ml-6`}
     >
-      <div className="flex items-center justify-evenly w-[95%] rounded-full bg-[rgba(47,47,47,0.6)] shadow-lg shadow-[#ff9637]/30 mt-2">
+      <div
+        className={`flex items-center justify-evenly w-[95%] rounded-full shadow-lg shadow-[#ff9637]/30 mt-2  ${
+          isDarkMode ? "light" : "dark"
+        }`}
+      >
         <div className="flex items-center">
           <img src={logo} alt="" className="h-[5rem] w-[4rem]" />
           <h1 className="text-white font-logo text-[1.75rem]" id="movie">

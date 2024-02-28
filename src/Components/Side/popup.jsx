@@ -9,7 +9,7 @@ const Popup = ({ setIsOpenPopup }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState(profileData.name);
   const [newEmail, setNewEmail] = useState(profileData.email);
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleEdit = () => {
     setIsEditing(true);
