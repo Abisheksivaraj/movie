@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
+import { useFavorites } from "../context/FavoriteContext";
 
-const MovieCard = ({ movie, addToFavorites }) => {
+const MovieCard = ({ movie }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
   const [showButton, setShowButton] = useState(false);
+
+  const { favorites, addToFavorites } = useFavorites();
 
   const handleMouseEnter = () => {
     setShowButton(true);
@@ -11,6 +14,15 @@ const MovieCard = ({ movie, addToFavorites }) => {
 
   const handleMouseLeave = () => {
     setShowButton(false);
+  };
+
+  const handleAddToFavorites = () => {
+    const isAlreadyAdded = favorites.some((fav) => fav.id === movie.id);
+    if (isAlreadyAdded) {
+      alert("This movie is already added to favorites.");
+    } else {
+      addToFavorites(movie);
+    }
   };
 
   return (
@@ -26,26 +38,30 @@ const MovieCard = ({ movie, addToFavorites }) => {
           <img
             src={`${IMAGE_PATH}${movie.poster_path}`}
             alt=""
-            className="h-[17rem] w-[12rem] rounded-xl ml-5"
+            className="h-[17rem] w-[12rem] rounded-xl ml-5 mt-[5rem]"
           />
           {showButton && (
             <button
-              onClick={() => addToFavorites(movie)}
-              className="absolute inset-0 w-full h-full left-5 rounded-xl flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-70 transition duration-[500ms] text-white"
+              onClick={handleAddToFavorites}
+              className="absolute inset-0 w-full h-full left-5 rounded-xl flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-70 transition duration-[500ms] text-white   mt-[5rem]"
             >
               <div className="flex items-center hover:h-8 hover:w-[full] hover:bg-white hover:text-black hover:p-2 hover:rounded-md font-semibold">
                 <FaHeart className="text-[red] mr-1" />
-                <p className=" ">Add to Favorites</p>
+                <p className=" ">
+                  {favorites.some((fav) => fav.id === movie.id)
+                    ? "Added to Favorites"
+                    : "Add to Favorites"}
+                </p>
               </div>
             </button>
           )}
         </div>
       ) : null}
-      <p className="absolute left-[7rem] bottom-[13rem] p-1 text-[1rem]  font-semibold rounded-md text-white  hover:w-[full] hover:bg-white hover:text-black  hover:rounded-md  cursor-pointer">
+      <p className="absolute left-[7rem] bottom-[13rem] p-1 text-[1rem]  font-semibold rounded-md text-white  hover:w-[full] hover:bg-white hover:text-black  hover:rounded-md  cursor-pointer mt-5">
         Watch Trailer
       </p>
       <h5
-        className="text-[1.5rem] mt-2 text-[white] font-serif font-semibold  text-center"
+        className="text-[1.1rem] mt-[5rem] text-[white] font-serif font-semibold  text-center"
         id="color"
       >
         {movie.title}

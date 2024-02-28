@@ -38,14 +38,14 @@ const AnimeCard = ({ anime }) => {
           <img
             src={`${IMAGE_PATH}${anime.poster_path}`}
             alt=""
-            className="h-[17rem] w-[12rem] rounded-xl ml-5"
+            className="h-[17rem] w-[12rem] rounded-xl ml-2 mt-[4rem]"
           />
           {showButton && (
             <button
               onClick={handleAddToFavorites}
-              className="absolute inset-0 w-full h-full left-5 rounded-xl flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-70 transition duration-[500ms] text-white"
+              className="absolute inset-0 w-full h-full left-5 rounded-xl flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-70 transition duration-[500ms] text-white ml-[-0.75rem] mt-[4rem]"
             >
-              <div className="flex items-center hover:h-8 hover:w-[full] hover:bg-white hover:text-black hover:p-2 hover:rounded-md font-semibold">
+              <div className="flex items-center hover:h-8 hover:w-[full] hover:bg-white hover:text-black hover:p-2 hover:rounded-md font-semibold ">
                 <FaHeart className="text-[red] mr-1" />
                 <p className=" ">
                   {favorites.some((fav) => fav.id === anime.id)
@@ -61,7 +61,7 @@ const AnimeCard = ({ anime }) => {
         Watch Trailer
       </p>
       <h5
-        className="text-[1.5rem] mt-2 text-[white] font-serif font-semibold  text-center"
+        className="text-[1.1rem] mt-[5rem] text-[white] font-serif font-semibold  text-center"
         id="color"
       >
         {anime.title}
