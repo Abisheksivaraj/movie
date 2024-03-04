@@ -3,7 +3,7 @@ import {
   useFavorites,
   useFavoritesActions,
 } from "../../context/FavoriteContext";
-import "../../App.css"; // Corrected import path for CSS file
+import "../../App.css";
 
 const Favorites = () => {
   const { favorites } = useFavorites();

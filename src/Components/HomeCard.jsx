@@ -1,69 +1,47 @@
-// Assuming useFavorites is a custom hook to manage favorites
 import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { useFavorites } from "../context/FavoriteContext";
+import { Link } from "react-router-dom";
+import { IoIosHeartDislike } from "react-icons/io";
 
 const HomeCard = ({ home }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original/";
-  console.log(home);
 
-  const [showButton, setShowButton] = useState(false);
-  const { favorites, addToFavorites } = useFavorites(); // Using the useFavorites hook
+  const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
+  const isAlreadyAdded = favorites.some((fav) => fav.id === home.id);
+  const [isFavorite, setIsFavorite] = useState(isAlreadyAdded);
 
-  const handleMouseEnter = () => {
-    setShowButton(true);
-  };
-
-  const handleMouseLeave = () => {
-    setShowButton(false);
-  };
-
-  const handleAddToFavorites = () => {
-    const isAlreadyAdded = favorites.some((fav) => fav.id === home.id);
-    if (isAlreadyAdded) {
-      alert("This movie is already added to favorites.");
+  const handletoggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+    if (isFavorite) {
+      removeFromFavorites(home.id);
     } else {
       addToFavorites(home);
     }
   };
 
   return (
-    <div
-      className="hover:scale-[1.1]  transition duration-[500ms] flex flex-col items-center text-center px-[10%]"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {home.poster_path ? (
-        <div
-          className={`relative transition duration-[500ms] h-[17rem] w-[12rem] rounded-xl`}
-        >
+    <div>
+      <div className="relative transition duration-[500ms]  rounded-xl">
+        <Link to={`/movies/${home.id}/cast`}>
           <img
             src={`${IMAGE_PATH}${home.poster_path}`}
             alt=""
-            className="h-[17rem] w-[12rem] rounded-xl ml-5 mt-[4rem]"
+            className="h-[23rem] w-[18rem] text-[1.1rem] ml-20 mt-[2rem] text-[white]  rounded-xl cursor-pointer hover:scale-[1.1]  transition duration-[500ms] "
+            id="color"
           />
-          {showButton && (
-            <button
-              onClick={handleAddToFavorites}
-              className="absolute inset-0 w-full h-full left-5 rounded-xl flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-70 transition duration-[500ms] text-white  mt-[4rem]"
-            >
-              <div className="flex items-center hover:h-8 hover:w-[full] hover:bg-white hover:text-black hover:p-2 hover:rounded-md font-semibold">
-                <FaHeart className="text-[red] mr-1" />
-                <p className=" ">
-                  {favorites.some((fav) => fav.id === home.id)
-                    ? "Added to Favorites"
-                    : "Add to Favorites"}
-                </p>
-              </div>
-            </button>
+        </Link>
+        <button onClick={handletoggleFavorite}>
+          {isFavorite ? (
+            <IoIosHeartDislike className="h-[2.5rem]  w-[3rem] bg-white p-2 text-center rounded-md text-[red]  cursor-pointer absolute bottom-[1.6rem] right-[2.7rem]" />
+          ) : (
+            <FaHeart className="h-[2.5rem]  w-[3rem] p-2 text-center rounded-md text-[red] cursor-pointer absolute bottom-[1.6rem] right-[2.7rem] bg-white " />
           )}
-        </div>
-      ) : null}
-      <p className="absolute left-[7.5rem] bottom-[13rem] p-2 text-[1rem]  font-semibold rounded-md text-white  hover:w-[full] hover:bg-white hover:text-black  hover:rounded-md  cursor-pointer  ">
-        Watch Trailer
-      </p>
+        </button>
+      </div>
+
       <h5
-        className="text-[1.1rem] mt-[5rem] text-[white] font-serif font-semibold text-center"
+        className="text-[1.1rem]  text-[white] font-serif font-semibold text-center"
         id="color"
       >
         {home.title}

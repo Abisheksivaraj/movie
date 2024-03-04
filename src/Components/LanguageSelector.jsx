@@ -3,8 +3,8 @@ import React from "react";
 const LanguageSelector = ({ onSelectLanguage }) => {
   const languages = [
     { id: "en", name: "English" },
-    { id: "fr", name: "French" },
-    { id: "es", name: "Spanish" },
+    { id: "ta", name: "Eamil" },
+    { id: "hi", name: "Hindi" },
     // Add more languages as needed
   ];
 
