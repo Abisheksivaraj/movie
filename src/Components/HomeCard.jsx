@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { useFavorites } from "../context/FavoriteContext";
-import { Link } from "react-router-dom";
 import { IoIosHeartDislike } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const HomeCard = ({ home }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original/";
@@ -23,13 +23,20 @@ const HomeCard = ({ home }) => {
   return (
     <div>
       <div className="relative transition duration-[500ms]  rounded-xl">
-        <Link to={`/movies/${home.id}/cast`}>
+        <Link to={`/movies/${home.id}`}>
           <img
             src={`${IMAGE_PATH}${home.poster_path}`}
             alt=""
             className="h-[23rem] w-[18rem] text-[1.1rem] ml-20 mt-[2rem] text-[white]  rounded-xl cursor-pointer hover:scale-[1.1]  transition duration-[500ms] "
             id="color"
           />
+
+          <h5
+            className="text-[1.1rem]  text-[white] font-serif font-semibold text-center"
+            id="color"
+          >
+            {home.title}
+          </h5>
         </Link>
         <button onClick={handletoggleFavorite}>
           {isFavorite ? (
@@ -39,13 +46,6 @@ const HomeCard = ({ home }) => {
           )}
         </button>
       </div>
-
-      <h5
-        className="text-[1.1rem]  text-[white] font-serif font-semibold text-center"
-        id="color"
-      >
-        {home.title}
-      </h5>
     </div>
   );
 };

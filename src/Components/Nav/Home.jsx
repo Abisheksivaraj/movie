@@ -39,20 +39,19 @@ const Home = () => {
     console.log("Added to favorites:", movie);
   };
 
-  const renderHome = () =>
-    home.map((movie, index) => (
-      <Link key={movie.id} to={`/movies/${movie.id}`} className="block">
-        <HomeCard
-          key={`${movie.id}-${index}`}
-          home={movie}
-          addToFavorites={addToFavorites}
-        />
-      </Link>
-    ));
-
   return (
     <div>
-      <div className="container">{renderHome()}</div>
+      <div className="container">
+        {home.map((movie, index) => (
+          
+            <HomeCard
+              key={`${movie.id}-${index}`}
+              home={movie}
+              addToFavorites={addToFavorites}
+            />
+          
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import { FaHeart } from "react-icons/fa";
 
-
 const LanguageCard = ({ movie, addToFavorites }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
   console.log(movie);

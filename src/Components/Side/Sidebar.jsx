@@ -22,8 +22,8 @@ const SideBar = () => {
       <div
         className={`z-20  top-0 left-0 w-16 h-[30rem] flex flex-col items-center justify-center
                 bg-[rgba(47,47,47,0.6)]  shadow-[#ff9637]/50 dark:bg-gray-900 shadow-lg mt-[6rem] ml-5  rounded-3xl fixed ${
-          isDarkMode ? "dark" : "light"
-        }`}
+                  isDarkMode ? "dark" : "light"
+                }`}
       >
         <img
           src={profile}
