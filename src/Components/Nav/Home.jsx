@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import HomeCard from "../HomeCard";
 import { useSearch } from "../../context/SearchContext";
-import { Link } from "react-router-dom";
+
 
 const Home = () => {
   const { searchQuery } = useSearch();

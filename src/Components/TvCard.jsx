@@ -1,73 +1,61 @@
 import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
+import { IoIosHeartDislike } from "react-icons/io";
 import { useFavorites } from "../context/FavoriteContext";
+import { Link } from "react-router-dom";
 
 const TvCard = ({ tv }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
   console.log(tv);
 
-  const [showButton, setShowButton] = useState(false);
+  const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
+  const isAlreadyAdded = favorites.some((fav) => fav.id === tv.id);
+  const [isFavorite, setIsFavorite] = useState(isAlreadyAdded);
+  const [showAlert, setShowAlert] = useState(false);
 
-  const { favorites, addToFavorites } = useFavorites();
-
-  const handleMouseEnter = () => {
-    setShowButton(true);
-  };
-
-  const handleMouseLeave = () => {
-    setShowButton(false);
-  };
-
-  const handleAddToFavorites = () => {
-    const isAlreadyAdded = favorites.some((fav) => fav.id === tv.id);
-    if (isAlreadyAdded) {
-      alert("This movie is already added to favorites.");
+  const handletoggleFavorite = () => {
+    if (isFavorite) {
+      setShowAlert(true);
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 3000);
     } else {
+      setIsFavorite(!isFavorite);
       addToFavorites(tv);
     }
   };
 
   return (
-    <div
-      className="hover:scale-[1.1]  transition duration-[500ms] flex flex-col items-center text-center px-[10%]"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {tv.poster_path ? (
-        <div
-          className={`relative transition duration-[500ms] h-[17rem] w-[12rem] rounded-xl`}
-        >
+    <div>
+      <div className="relative transition duration-[500ms]  rounded-xl">
+        <Link to={`/movies/${tv.id}`}>
           <img
             src={`${IMAGE_PATH}${tv.poster_path}`}
             alt=""
-            className="h-[17rem] w-[12rem] rounded-xl ml-5 mt-[5rem]"
+            className="h-[23rem] w-[18rem] text-[1.1rem] ml-20 mt-[2rem] text-[white]  rounded-xl cursor-pointer hover:scale-[1.1]  transition duration-[500ms] "
+            id="color"
           />
-          {showButton && (
-            <button
-              onClick={handleAddToFavorites}
-              className="absolute inset-0 w-full h-full left-5 rounded-xl flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-70 transition duration-[500ms] text-white   mt-[5rem]"
-            >
-              <div className="flex items-center hover:h-8 hover:w-[full] hover:bg-white hover:text-black hover:p-2 hover:rounded-md font-semibold">
-                <FaHeart className="text-[red] mr-1" />
-                <p className=" ">
-                  {favorites.some((fav) => fav.id === tv.id)
-                    ? "Added to Favorites"
-                    : "Add to Favorites"}
-                </p>
-              </div>
-            </button>
+
+          <h5
+            className="text-[1.1rem] mt-5 text-[white] font-serif font-semibold text-center ml-4"
+            id="color"
+          >
+            {tv.name}
+          </h5>
+        </Link>
+        <button onClick={handletoggleFavorite}>
+          {isFavorite ? (
+            <IoIosHeartDislike className="h-[2.5rem]  w-[3rem] bg-white p-2 text-center rounded-md text-[red]  cursor-pointer absolute bottom-[4.3rem] right-[2.7rem]" />
+          ) : (
+            <FaHeart className="h-[2.5rem]  w-[3rem] p-2 text-center rounded-md text-[red] cursor-pointer absolute bottom-[4.3rem] right-[2.7rem] bg-white " />
           )}
-        </div>
-      ) : null}
-      <p className="absolute left-[7rem] bottom-[13rem] p-1 text-[1rem]  font-semibold rounded-md text-white  hover:w-[full] hover:bg-white hover:text-black  hover:rounded-md  cursor-pointer mt-5">
-        Watch Trailer
-      </p>
-      <h5
-        className="text-[1.1rem] mt-[5rem] text-[white] font-serif font-semibold  text-center"
-        id="color"
-      >
-        {tv.name}
-      </h5>
+        </button>
+        {showAlert && (
+          <div className="absolute bottom-[4.3rem] left-[50%] transform -translate-x-1/2 bg-red-500 px-4 py-2 rounded-md text-white">
+            Movie already added to favorites!
+          </div>
+        )}
+      </div>
     </div>
   );
 };

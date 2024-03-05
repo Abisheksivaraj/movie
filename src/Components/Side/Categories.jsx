@@ -1,4 +1,7 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
+
+// Images
 import Action from "../../assets/genre-image/action.png";
 import Adventure from "../../assets/genre-image/adventure.png";
 import animation from "../../assets/genre-image/animation.png";
@@ -18,33 +21,32 @@ import thriller from "../../assets/genre-image/thriller.png";
 import war from "../../assets/genre-image/war.png";
 import western from "../../assets/genre-image/western.png";
 
-import ActionCard from "../GenrePage/ActionCard";
-import AdventureCard from "../GenrePage/AdventureCard";
-import AnimationCard from "../GenrePage/AnimationCard";
-import ComedyCard from "../GenrePage/ComedyCard";
-import CrimeCard from "../GenrePage/CrimeCard";
-import DocumentryCard from "../GenrePage/DocumentryCard";
-import DramaCard from "../GenrePage/DramaCard";
-import FamilyCard from "../GenrePage/FamilyCard";
-import FantasyCard from "../GenrePage/FantasyCard";
-import FictionCard from "../GenrePage/FictionCard";
-import HistoryCard from "../GenrePage/HistoryCard";
-import HorrorCard from "../GenrePage/HorrorCard";
-import MusicCard from "../GenrePage/MusicCard";
-import MysteryCard from "../GenrePage/MysteryCard";
-import RomanceCard from "../GenrePage/RomanceCard";
-import ThrillerCard from "../GenrePage/ThrillerCard";
-import WarCard from "../GenrePage/WarCard";
-import WesternCard from "../GenrePage/WesternCard";
-
-import { Link,NavLink } from "react-router-dom";
+// Genre
+import ActionFilm from "../GenrePage/ActionCard";
+import AdventureFilm from "../GenrePage/AdventureCard";
+import AnimationFilm from "../GenrePage/AnimationCard";
+import CrimeFilm from "../GenrePage/CrimeCard";
+import ComedyFilm from "../GenrePage/ComedyCard";
+import DramaFilm from "../GenrePage/DramaCard";
+import DocumentryFilm from "../GenrePage/DocumentryCard";
+import HorrorFilm from "../GenrePage/HorrorCard";
+import FamilyFilm from "../GenrePage/FamilyCard";
+import FantasyFilm from "../GenrePage/FantasyCard";
+import FictionFilm from "../GenrePage/FictionCard";
+import RomanceFilm from "../GenrePage/RomanceCard";
+import ThrillerFilm from "../GenrePage/ThrillerCard";
+import MysteryFilm from "../GenrePage/MysteryCard";
+import MusicFilm from "../GenrePage/MusicCard";
+import WarFilm from "../GenrePage/WarCard";
+import WesternFilm from "../GenrePage/WesternCard";
+import HistoryFilm from "../GenrePage/HistoryCard";
 
 const Categories = () => {
   return (
     <div className="relative">
       <div className="container-genre">
         <div className="text-[white]">
-          <Link to={"/ActionCard"}>
+          <Link to={"/ActionFilm"}>
             <img
               src={Action}
               alt=""
@@ -56,7 +58,7 @@ const Categories = () => {
         </div>
 
         <div>
-          <Link to={"/AdventureCard"}>
+          <Link to={"/AdventureFilm"}>
             <img
               src={Adventure}
               alt=""
@@ -68,7 +70,7 @@ const Categories = () => {
         </div>
 
         <div>
-          <Link to={"/AnimationCard"}>
+          <Link to={"/AnimationFilm"}>
             <img
               src={animation}
               alt=""
@@ -80,7 +82,7 @@ const Categories = () => {
         </div>
 
         <div>
-          <Link to={"/ComedyCard"}>
+          <Link to={"/ComedyFilm"}>
             <img
               src={comedy}
               alt=""
@@ -92,7 +94,7 @@ const Categories = () => {
         </div>
 
         <div>
-          <Link to={"/CrimeCard"}>
+          <Link to={"/CrimeFilm"}>
             <img
               src={crime}
               alt=""
@@ -104,7 +106,7 @@ const Categories = () => {
         </div>
 
         <div>
-          <Link to={"/DocumentryCard"}>
+          <Link to={"/DocumentryFilm"}>
             <img
               src={documentary}
               alt=""
@@ -116,7 +118,7 @@ const Categories = () => {
         </div>
 
         <div>
-          <Link to={"/DramaCard"}>
+          <Link to={"/DramaFilm"}>
             <img
               src={drama}
               alt=""
@@ -128,7 +130,7 @@ const Categories = () => {
         </div>
 
         <div>
-          <Link to={"/FamilyCard"}>
+          <Link to={"/FamilyFilm"}>
             <img
               src={family}
               alt=""
@@ -140,7 +142,7 @@ const Categories = () => {
         </div>
 
         <div>
-          <Link to={"/FantasyCard"}>
+          <Link to={"/FantasyFilm"}>
             <img
               src={fantasy}
               alt=""
@@ -152,7 +154,7 @@ const Categories = () => {
         </div>
 
         <div>
-          <Link to={"/HistoryCard"}>
+          <Link to={"/HistoryFilm"}>
             <img
               src={history}
               alt=""
@@ -164,7 +166,7 @@ const Categories = () => {
         </div>
 
         <div>
-          <Link to={"/HorrorCard"}>
+          <Link to={"/HorrorFilm"}>
             <img
               src={horror}
               alt=""
@@ -176,7 +178,7 @@ const Categories = () => {
         </div>
 
         <div>
-          <Link to={"/MusicCard"}>
+          <Link to={"/MusicFilm"}>
             <img
               src={musical}
               alt=""
@@ -188,7 +190,7 @@ const Categories = () => {
         </div>
 
         <div>
-          <Link to={"/MysteryCard"}>
+          <Link to={"/MysteryFilm"}>
             <img
               src={mystery}
               alt=""
@@ -200,7 +202,7 @@ const Categories = () => {
         </div>
 
         <div>
-          <Link to={"/RomanceCard"}>
+          <Link to={"/RomanceFilm"}>
             <img
               src={romance}
               alt=""
@@ -212,7 +214,7 @@ const Categories = () => {
         </div>
 
         <div className="">
-          <Link to={"/FictionCard"}>
+          <Link to={"/FictionFilm"}>
             <img
               src={scifi}
               alt=""
@@ -224,7 +226,7 @@ const Categories = () => {
         </div>
 
         <div className="col-start-2">
-          <Link to={"/ThrillerCard"}>
+          <Link to={"/ThrillerFilm"}>
             <img
               src={thriller}
               alt=""
@@ -236,7 +238,7 @@ const Categories = () => {
         </div>
 
         <div className="col-start-3">
-          <Link to={"/WarCard"}>
+          <Link to={"/WarFilm"}>
             <img
               src={war}
               alt=""
@@ -248,7 +250,7 @@ const Categories = () => {
         </div>
 
         <div className="col-start-4 ">
-          <Link to={"/WesternCard"}>
+          <Link to={"/WesternFilm"}>
             <img
               src={western}
               alt=""
