@@ -58,7 +58,7 @@ const ActionCard = () => {
           <li key={movie.id} className="list-none">
             <Link key={movie.id} to={`/movies/${movie.id}`} className="block">
               <img
-                className="h-[25rem] w-[20rem] text-[1.1rem] ml-20 mt-[2rem] text-[white] font-serif font-semibold text-center rounded-xl cursor-pointer hover:scale-[1.1]  transition duration-[500ms] "
+                className="h-[23rem] w-[18rem] text-[1.1rem] ml-20 mt-[2rem] text-[white]  rounded-xl cursor-pointer hover:scale-[1.1]  transition duration-[500ms] "
                 id="color"
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 alt={movie.title}
@@ -70,18 +70,18 @@ const ActionCard = () => {
                 {movie.title}
               </h5>
             </Link>
-            <button onClick={handletoggleFavorite}>
+            {/* <button onClick={handletoggleFavorite}>
               {isFavorite ? (
                 <IoIosHeartDislike className="h-[2.5rem]  w-[3rem] bg-white p-2 text-center rounded-md text-[red]  cursor-pointer absolute bottom-[4.3rem] right-[2.7rem]" />
               ) : (
                 <FaHeart className="h-[2.5rem]  w-[3rem] p-2 text-center rounded-md text-[red] cursor-pointer absolute bottom-[4.3rem] right-[2.7rem] bg-white " />
               )}
-            </button>
-            {showAlert && (
+            </button> */}
+            {/* {showAlert && (
               <div className="absolute bottom-[4.3rem] left-[50%] transform -translate-x-1/2 bg-red-500 px-4 py-2 rounded-md text-white">
                 Movie already added to favorites!
-              </div>
-            )}
+              </div> */}
+            {/* )} */}
           </li>
         ))}
       </div>

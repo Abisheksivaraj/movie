@@ -2,29 +2,69 @@ import React, { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
-// import { FaTwitter } from "react-icons/fa";
 import "../styles/Login.css";
 import { Link } from "react-router-dom";
+import {
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+} from "firebase/auth";
+
+import { auth, db } from "../Firebase";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
-  function change() {
-    if (showPassword) {
-      setShowPassword(false);
-    } else {
-      setShowPassword(true);
+  const change = () => {
+    setShowPassword((prev) => !prev);
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const email = e.target.Mail.value;
+    const password = e.target.Password.value;
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      // Redirect or show success message
+    } catch (error) {
+      console.log(error);
+      // Handle error
     }
-  }
+  };
+
+  const handleGoogleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      // Redirect or show success message
+    } catch (error) {
+      console.log(error);
+      // Handle error
+    }
+  };
+
+  const handleFacebookLogin = async () => {
+    const provider = new FacebookAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      // Redirect or show success message
+    } catch (error) {
+      console.log(error);
+      // Handle error
+    }
+  };
+
   return (
     <div className="login-content">
       <div className="inputs">
         <h1>Login</h1>
-        <form action="#">
+        <form onSubmit={handleLogin}>
           <div className="form-input">
             <input
               className="username"
-              type="mail"
+              type="email"
               name="Mail"
               placeholder=""
               autoComplete="off"
@@ -59,18 +99,18 @@ const Login = () => {
             </Link>
           </div>
 
-          <Link type="submit" className="signup" to={"/home"}>
+          <button type="submit" className="signup">
             Login
-          </Link>
+          </button>
         </form>
 
         <div className="or">OR</div>
 
         <div className="icons">
-          <div className="google">
+          <div className="google" onClick={handleGoogleLogin}>
             <FaGoogle />
           </div>
-          <div className="facebook">
+          <div className="facebook" onClick={handleFacebookLogin}>
             <FaFacebookF />
           </div>
         </div>

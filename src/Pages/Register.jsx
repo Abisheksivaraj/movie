@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import { FaGoogle, FaFacebookF, FaEye } from "react-icons/fa";
 import "../styles/Register.css";
 
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  signInWithPopup,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../Firebase";
 import { doc, setDoc } from "firebase/firestore";
@@ -15,8 +21,9 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    setLoading(true);
     e.preventDefault();
+
+    setLoading(true);
 
     const displayName = e.target.UserName.value;
     const email = e.target.Mail.value;
@@ -24,7 +31,6 @@ const Register = () => {
 
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(res);
 
       await updateProfile(res.user, {
         displayName,
@@ -46,6 +52,28 @@ const Register = () => {
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
+  };
+
+  const handleGoogleSignup = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      const res = await signInWithPopup(auth, provider);
+      console.log(res);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleFacebookLogin = async () => {
+    const provider = new FacebookAuthProvider();
+    try {
+      const res = await signInWithPopup(auth, provider);
+      console.log(res);
+      navigate("/home");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -104,10 +132,10 @@ const Register = () => {
         <div className="or">OR</div>
 
         <div className="icons">
-          <div className="google">
+          <div className="google" onClick={handleGoogleSignup}>
             <FaGoogle />
           </div>
-          <div className="facebook">
+          <div className="facebook" onClick={handleFacebookLogin}>
             <FaFacebookF />
           </div>
         </div>

@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { AiFillCloseCircle } from "react-icons/ai";
-
 import YouTube from "react-youtube";
+import axios from "axios";
 
 const MovieDetails = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const [cast, setCast] = useState([]);
+  const [trailer, setTrailer] = useState(null);
 
   const imgPath = "https://image.tmdb.org/t/p/w1280";
-  const castImgPath = "https://image.tmdb.org/t/p/w400"; // Increased size for cast images
+  const castImgPath = "https://image.tmdb.org/t/p/w400";
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -44,6 +45,30 @@ const MovieDetails = () => {
     fetchMovieDetails();
     fetchCastDetails();
   }, [id]);
+
+  const fetchMovie = async (id) => {
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/${id}`,
+        {
+          params: {
+            api_key: "5e154d99ca5ac3638f39919adc68d648",
+            append_to_response: "videos",
+          },
+        }
+      );
+      const { data } = response;
+      if (data.videos && data.videos.results) {
+        const trailer = data.videos.results.find(
+          (vid) => vid.type === "Trailer"
+        );
+        setTrailer(trailer ? trailer : data.videos.results[0]);
+      }
+      setMovieDetails(data);
+    } catch (error) {
+      console.error("Error fetching movie:", error);
+    }
+  };
 
   if (!movieDetails) {
     return <div>Loading...</div>;
@@ -82,11 +107,43 @@ const MovieDetails = () => {
                 Release Date: {movieDetails.release_date}
               </p>
             </div>
-            <div className="flex items-start ">
-              <YouTube className="absolute top-3rem " />
-              <button className="bg-red-600 text-white py-2 px-4 rounded-md mr-10  mt-[60rem] z-10 w-[15rem]">
-                Watch Trailer
-              </button>
+            <div className="flex items-start">
+              {trailer ? (
+                <>
+                  <YouTube
+                    className="absolute top-[8rem] left-[20rem] h-[28rem] w-[40rem]"
+                    videoId={trailer.key}
+                    // containerClassName={"youtube-container amru"}
+                    opts={{
+                      width: "100%",
+                      height: "100%",
+                      playerVars: {
+                        autoplay: 1,
+                        controls: 0,
+                        cc_load_policy: 0,
+                        fs: 0,
+                        iv_load_policy: 0,
+                        modestbranding: 0,
+                        rel: 0,
+                        showinfo: 0,
+                      },
+                    }}
+                  />
+                  <button
+                    onClick={() => setTrailer(null)}
+                    className="button close-video"
+                  >
+                    Close
+                  </button>
+                </>
+              ) : (
+                <button
+                  onClick={() => fetchMovie(id)}
+                  className="button play-video"
+                >
+                  Play Trailer
+                </button>
+              )}
             </div>
           </div>
           <div className="mt-8">

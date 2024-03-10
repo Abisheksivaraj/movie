@@ -57,10 +57,10 @@ const App = () => {
               <ProfileProvider>
                 <Routee>
                   <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/home" element={<Home />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/Forgot" element={<ForgotPassword/>}/>
+                    <Route path="/Forgot" element={<ForgotPassword />} />
                     <Route path="/Tv" element={<Tv />} />
                     <Route path="/Movies" element={<Movies />} />
                     <Route path="/Anime" element={<Anime />} />
