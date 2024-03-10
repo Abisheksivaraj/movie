@@ -36,18 +36,20 @@ const TvCard = ({ tv }) => {
             id="color"
           />
 
-          <h5
-            className="text-[1.1rem] mt-5 text-[white] font-serif font-semibold text-center ml-4"
-            id="color"
-          >
+          <h5 className="text-center pt-7 font-bold text-white text-[1.5rem]">
             {tv.name}
           </h5>
+          {tv.vote_average ? (
+            <span className="absolute top-3 right-12 text-white h-10 w-10 bg-black p-2 rounded-full border border-green-400">
+              {tv.vote_average.toFixed(1)}
+            </span>
+          ) : null}
         </Link>
         <button onClick={handletoggleFavorite}>
           {isFavorite ? (
-            <IoIosHeartDislike className="h-[2.5rem]  w-[3rem] bg-white p-2 text-center rounded-md text-[red]  cursor-pointer absolute bottom-[4.3rem] right-[2.7rem]" />
+            <IoIosHeartDislike className="h-[2.5rem]  w-[3rem] bg-white p-2 text-center rounded-md text-[red]  cursor-pointer absolute bottom-[6.3rem] right-[2.7rem]" />
           ) : (
-            <FaHeart className="h-[2.5rem]  w-[3rem] p-2 text-center rounded-md text-[red] cursor-pointer absolute bottom-[4.3rem] right-[2.7rem] bg-white " />
+            <FaHeart className="h-[2.5rem]  w-[3rem] p-2 text-center rounded-md text-[red] cursor-pointer absolute bottom-[6.3rem] right-[2.7rem] bg-white " />
           )}
         </button>
         {showAlert && (

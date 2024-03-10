@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
+// import { FaTwitter } from "react-icons/fa";
 import "../styles/Login.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -54,12 +54,14 @@ const Login = () => {
             </div>
           </div>
           <div className="forget">
-            <a href="">Forget Password?</a>
+            <Link to={"/Forgot"}>
+              <a href="">Forget Password?</a>
+            </Link>
           </div>
 
-          <NavLink type="submit" className="signup" to={"/home"}>
+          <Link type="submit" className="signup" to={"/home"}>
             Login
-          </NavLink>
+          </Link>
         </form>
 
         <div className="or">OR</div>

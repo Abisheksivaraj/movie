@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { AiFillCloseCircle } from "react-icons/ai";
 
+import YouTube from "react-youtube";
+
 const MovieDetails = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
@@ -81,6 +83,7 @@ const MovieDetails = () => {
               </p>
             </div>
             <div className="flex items-start ">
+              <YouTube className="absolute top-3rem " />
               <button className="bg-red-600 text-white py-2 px-4 rounded-md mr-10  mt-[60rem] z-10 w-[15rem]">
                 Watch Trailer
               </button>

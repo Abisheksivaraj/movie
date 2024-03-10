@@ -6,6 +6,7 @@ import { FavoritesProvider } from "./context/FavoriteContext.jsx";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Home from "./Components/Nav/Home";
+import ForgotPassword from "./Pages/ForgotPassword.jsx";
 import Tv from "./Components/Nav/Tv";
 import Anime from "./Components/Nav/Anime.jsx";
 import Movies from "./Components/Nav/Movies.jsx";
@@ -56,9 +57,10 @@ const App = () => {
               <ProfileProvider>
                 <Routee>
                   <Routes>
-                    <Route path="/home" element={<Home />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/Forgot" element={<ForgotPassword/>}/>
                     <Route path="/Tv" element={<Tv />} />
                     <Route path="/Movies" element={<Movies />} />
                     <Route path="/Anime" element={<Anime />} />

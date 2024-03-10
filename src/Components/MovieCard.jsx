@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const MovieCard = ({ movie }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
   const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
-  const isAlreadyAdded = favorites.some((fav) => fav.id === home.id);
+  const isAlreadyAdded = favorites.some((fav) => fav.id === movie.id);
   const [isFavorite, setIsFavorite] = useState(isAlreadyAdded);
   const [showAlert, setShowAlert] = useState(false);
 
@@ -16,10 +16,11 @@ const MovieCard = ({ movie }) => {
       setShowAlert(true);
       setTimeout(() => {
         setShowAlert(false);
+        dvvfbv;
       }, 3000);
     } else {
       setIsFavorite(!isFavorite);
-      addToFavorites(home);
+      addToFavorites(movie);
     }
   };
 
@@ -34,18 +35,20 @@ const MovieCard = ({ movie }) => {
             id="color"
           />
 
-          <h5
-            className="text-[1.1rem] mt-5 text-[white] font-serif font-semibold text-center"
-            id="color"
-          >
+          <h5 className="text-center pt-7 font-bold text-white text-[1.5rem]">
             {movie.title}
           </h5>
+          {movie.vote_average ? (
+            <span className="absolute top-3 right-12 text-white h-10 w-10 bg-black p-2 rounded-full border border-green-400">
+              {movie.vote_average.toFixed(1)}
+            </span>
+          ) : null}
         </Link>
         <button onClick={handletoggleFavorite}>
           {isFavorite ? (
-            <IoIosHeartDislike className="h-[2.5rem]  w-[3rem] bg-white p-2 text-center rounded-md text-[red]  cursor-pointer absolute bottom-[4.3rem] right-[2.7rem]" />
+            <IoIosHeartDislike className="h-[2.5rem]  w-[3rem] bg-white p-2 text-center rounded-md text-[red]  cursor-pointer absolute bottom-[6.3rem] right-[2.7rem]" />
           ) : (
-            <FaHeart className="h-[2.5rem]  w-[3rem] p-2 text-center rounded-md text-[red] cursor-pointer absolute bottom-[4.3rem] right-[2.7rem] bg-white " />
+            <FaHeart className="h-[2.5rem]  w-[3rem] p-2 text-center rounded-md text-[red] cursor-pointer absolute bottom-[6.3rem] right-[2.7rem] bg-white " />
           )}
         </button>
         {showAlert && (

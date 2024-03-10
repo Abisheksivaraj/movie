@@ -35,12 +35,14 @@ const HomeCard = ({ home }) => {
             id="color"
           />
 
-          <h5
-            className="text-[1.1rem] mt-5 text-[white] font-serif font-semibold text-center"
-            id="color"
-          >
-            {home.title}
+          <h5 className="text-center pt-7 font-bold text-white text-[1.5rem]">
+            {movie.title}
           </h5>
+          {movie.vote_average ? (
+            <span className="absolute top-3 right-12 text-white h-10 w-10 bg-black p-2 rounded-full border border-green-400">
+              {movie.vote_average.toFixed(1)}
+            </span>
+          ) : null}
         </Link>
         <button onClick={handletoggleFavorite}>
           {isFavorite ? (

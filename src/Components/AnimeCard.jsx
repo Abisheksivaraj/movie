@@ -27,26 +27,30 @@ const AnimeCard = ({ anime }) => {
   return (
     <div>
       <div className="relative transition duration-[500ms]  rounded-xl">
-        <Link to={`/movies/${anime.id}`}>
-          <img
-            src={`${IMAGE_PATH}${anime.poster_path}`}
-            alt=""
-            className="h-[23rem] w-[18rem] text-[1.1rem] ml-20 mt-[2rem] text-[white]  rounded-xl cursor-pointer hover:scale-[1.1]  transition duration-[500ms] "
-            id="color"
-          />
+        {anime.genre_ids.includes(16) && ( // Check if the anime is in the Animation genre (genre ID 16)
+          <Link to={`/movies/${anime.id}`}>
+            <img
+              src={`${IMAGE_PATH}${anime.poster_path}`}
+              alt=""
+              className="h-[23rem] w-[18rem] text-[1.1rem] ml-20 mt-[2rem] text-[white]  rounded-xl cursor-pointer hover:scale-[1.1]  transition duration-[500ms] "
+              id="color"
+            />
 
-          <h5
-            className="text-[1.1rem] mt-5 text-[white] font-serif font-semibold text-center"
-            id="color"
-          >
-            {anime.name}
-          </h5>
-        </Link>
+            <h5 className="text-center pt-7 font-bold text-white text-[1.5rem]">
+              {anime.title}
+            </h5>
+            {anime.vote_average ? (
+              <span className="absolute top-3 right-12 text-white h-10 w-10 bg-black p-2 rounded-full border border-green-400">
+                {anime.vote_average.toFixed(1)}
+              </span>
+            ) : null}
+          </Link>
+        )}
         <button onClick={handletoggleFavorite}>
           {isFavorite ? (
-            <IoIosHeartDislike className="h-[2.5rem]  w-[3rem] bg-white p-2 text-center rounded-md text-[red]  cursor-pointer absolute bottom-[4.3rem] right-[2.7rem]" />
+            <IoIosHeartDislike className="h-[2.5rem]  w-[3rem] bg-white p-2 text-center rounded-md text-[red]  cursor-pointer absolute bottom-[6.3rem] right-[2.7rem]" />
           ) : (
-            <FaHeart className="h-[2.5rem]  w-[3rem] p-2 text-center rounded-md text-[red] cursor-pointer absolute bottom-[4.3rem] right-[2.7rem] bg-white " />
+            <FaHeart className="h-[2.5rem]  w-[3rem] p-2 text-center rounded-md text-[red] cursor-pointer absolute bottom-[6rem] right-[2.7rem] bg-white " />
           )}
         </button>
         {showAlert && (

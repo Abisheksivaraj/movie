@@ -1,54 +1,58 @@
-import React from "react";
-import { useState } from "react";
-import { FaGoogle } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import { FaEye } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaGoogle, FaFacebookF, FaEye } from "react-icons/fa";
 import "../styles/Register.css";
 
-// import {
-//   signInWithPopup,
-//   FacebookAuthProvider,
-//   GoogleAuthProvider,
-// } from "firebase/auth";
-// import { authentication } from "../Firebase";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { auth, db } from "../Firebase";
+import { doc, setDoc } from "firebase/firestore";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [err, setErr] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  function change() {
-    if (showPassword) {
-      setShowPassword(false);
-    } else {
-      setShowPassword(true);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    setLoading(true);
+    e.preventDefault();
+
+    const displayName = e.target.UserName.value;
+    const email = e.target.Mail.value;
+    const password = e.target.Password.value;
+
+    try {
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(res);
+
+      await updateProfile(res.user, {
+        displayName,
+      });
+
+      await setDoc(doc(db, "users", res.user.uid), {
+        uid: res.user.uid,
+        displayName,
+        email,
+      });
+
+      navigate("/");
+    } catch (err) {
+      setErr(true);
+    } finally {
+      setLoading(false);
     }
-  }
-  // const signInWithFacebook = () => {
-  //   const provider = new FacebookAuthProvider();
-  //   signInWithPopup(authentication, provider)
-  //     .then((rel) => {
-  //       console.log(rel);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err.message);
-  //     });
-  // };
+  };
 
-  // const signInWithGoogle = () => {
-  //   const provider = new GoogleAuthProvider();
-  //   signInWithPopup(authentication, provider)
-  //     .then((rel) => {
-  //       console.log(rel);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
 
   return (
     <div className="reg-content">
       <div className="inputs">
         <h1>SignUp</h1>
-        <form action="#">
+        <form onSubmit={handleSubmit}>
           <div className="form-input">
             <input
               type="text"
@@ -64,7 +68,7 @@ const Register = () => {
           <div className="form-input">
             <input
               className="username"
-              type="mail"
+              type="email"
               name="Mail"
               placeholder=""
               autoComplete="off"
@@ -85,7 +89,7 @@ const Register = () => {
                 required
               />
               <div className="eye">
-                <FaEye onClick={change} />
+                <FaEye onClick={togglePasswordVisibility} />
               </div>
               <label className="input-label" htmlFor="Password">
                 Password
@@ -93,8 +97,8 @@ const Register = () => {
             </div>
           </div>
 
-          <button type="submit" className="signup">
-            Signup
+          <button type="submit" className="signup" disabled={loading}>
+            {loading ? "Signing up..." : "Signup"}
           </button>
         </form>
         <div className="or">OR</div>

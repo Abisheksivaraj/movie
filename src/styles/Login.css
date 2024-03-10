@@ -103,18 +103,6 @@ input[type="submit"] {
 input[type="submit"]:hover {
   transition: 0.5s;
 }
-.signup {
-  font-size: 18px;
-  color: #666666;
-  padding: 0.5rem 2rem;
-  /* display: flex;
-  align-items: center; */
-  background-color: #ff9637;
-  color: black;
-  border-radius: 6px;
-  font-weight: 700;
-  cursor: pointer;
-}
 
 .input-2 {
   width: 100%;
@@ -123,9 +111,9 @@ input[type="submit"]:hover {
   align-items: center;
 }
 
-/* .forget {
+.forget {
   text-align: end;
-} */
+}
 
 a {
   color: #e9f4fb;

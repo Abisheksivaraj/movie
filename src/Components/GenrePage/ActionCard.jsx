@@ -55,7 +55,7 @@ const ActionCard = () => {
       {/* <h1>Tamil Movies</h1> */}
       <div className="Container-tamil">
         {movies.map((movie) => (
-          <li key={movie.id}>
+          <li key={movie.id} className="list-none">
             <Link key={movie.id} to={`/movies/${movie.id}`} className="block">
               <img
                 className="h-[25rem] w-[20rem] text-[1.1rem] ml-20 mt-[2rem] text-[white] font-serif font-semibold text-center rounded-xl cursor-pointer hover:scale-[1.1]  transition duration-[500ms] "
