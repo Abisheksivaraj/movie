@@ -180,7 +180,7 @@ body {
     cursor-pointer;
   }
 
-  .abi
+  
 
   .timestamp {
     @apply text-xs text-left font-semibold text-gray-500 dark:text-gray-600 ml-2;
